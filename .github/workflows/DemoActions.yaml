@@ -15,4 +15,6 @@ jobs:
       - name: Checkout
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/checkout@v4.1.1
-          
+      - name: Prod deploy
+        if: ${{ github.event.inputs.server == 'prod' }}
+        run: echo "PROD"
