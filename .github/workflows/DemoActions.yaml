@@ -7,11 +7,12 @@ on:
         required: true
         default: 'dev'
 jobs: 
-  deploy-prod:
+  deploy-env:
     runs-on: ubuntu-latest
     steps:
       - name: Start Work
-        run: echo "Workflow démarré"
+        run: echo "Workflow démarré sur ${{ github.ref }}"
       - name: Checkout
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/checkout@v4.1.1
           
