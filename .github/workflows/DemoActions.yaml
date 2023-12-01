@@ -1,2 +1,14 @@
 name: Github Action Demo
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs: 
+      server: 
+        description: 'Environnement à utiliser'
+        required: true
+        default: 'dev'
+jobs: 
+  get-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Work
+        run: echo "Workflow démarré"
