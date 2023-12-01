@@ -1,2 +1,2 @@
 name: Github Action Demo
-on: workflow_run
+on: workflow_dispatch
