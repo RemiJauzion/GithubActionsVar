@@ -20,7 +20,7 @@ jobs:
         run: echo "PROD"
       - name: Qualif deploy
         if: ${{ github.event.inputs.server == 'qual' }}
-        run: 
+        run: |
           echo "QUALIF"
           exit 1
       - name: Dev deploy
