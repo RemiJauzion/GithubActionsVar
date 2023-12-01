@@ -17,10 +17,14 @@ jobs:
         uses: actions/checkout@v4.1.1
       - name: Prod deploy
         if: ${{ github.event.inputs.server == 'prod' }}
-        run: echo "PROD"
+        run:
+          echo "PROD"
+          exit 1
       - name: Qualif deploy
         if: ${{ github.event.inputs.server == 'qual' }}
         run: echo "QUALIF"
       - name: Dev deploy
         if: ${{ github.event.inputs.server == 'dev' }}
-        run: echo "DEV"
+        run: echo "DEV" 
+      - name: End Workflow
+        run: echo "Workflow terminé" 
